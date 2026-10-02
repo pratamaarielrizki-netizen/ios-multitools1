@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nama Kamu | Data & AI Engineer</title>
-<meta name="description" content="Portfolio of Nama Kamu, data and AI engineer based in Makassar.">
+<title>Ariel Rizki Pratama | Portfolio</title>
+<meta name="description" content="Portfolio of Ariel Rizki Pratama, student and programmer based in Makassar.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%8A%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,7 +52,7 @@ nav a:hover{color:var(--ink)}
 .btn.ghost:hover{background:var(--ink);color:var(--paper)!important}
 @media(max-width:640px){nav a:not(.btn){display:none}}
  
-/* hero: the one memorable thing is the data-series dot field */
+/* hero */
 .hero{position:relative;min-height:calc(100svh - 68px);display:flex;align-items:center;overflow:hidden}
 #field{position:absolute;inset:0;width:100%;height:100%}
 .hero .wrap{position:relative;padding:60px 0;pointer-events:none}
@@ -68,7 +68,7 @@ section{padding:110px 0}
 .head{max-width:620px;margin-bottom:48px}
 .head p{color:var(--mute);margin-top:16px}
  
-/* projects: an accordion list, not a grid of identical cards */
+/* projects */
 .projects{list-style:none;padding:0;border-top:1.5px solid var(--ink)}
 .proj{border-bottom:1.5px solid var(--ink)}
 .row{width:100%;display:grid;grid-template-columns:1fr auto 44px;gap:20px;align-items:center;padding:30px 0;background:none;border:0;color:inherit;font:inherit;text-align:left;cursor:pointer}
@@ -107,8 +107,8 @@ section{padding:110px 0}
 .facts dt{color:var(--mute)}.facts dd{font-weight:600;margin:0}
 .photo{aspect-ratio:4/5;border-radius:var(--r);background:var(--deep);display:grid;place-items:center;overflow:hidden;position:relative}
 .photo::before{content:"";position:absolute;inset:0;background-image:linear-gradient(#ffffff14 1px,transparent 1px),linear-gradient(90deg,#ffffff14 1px,transparent 1px);background-size:36px 36px}
-.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.photo b{position:relative;font:800 7rem var(--display);color:var(--signal);letter-spacing:-.06em}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2}
+.photo b{position:relative;font:800 7rem var(--display);color:var(--signal);letter-spacing:-.06em;z-index:1}
 @media(max-width:800px){.about{grid-template-columns:1fr;gap:40px}.photo{max-width:380px}}
  
 /* contact */
@@ -121,7 +121,6 @@ section{padding:110px 0}
 footer{background:var(--deep);color:#ffffff99;padding:34px 0;font-size:.95rem;border-top:1px solid #ffffff22}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
  
-/* v3: intro, hover preview, command menu, form */
 .hero h1 .w{display:inline-block;animation:rise .9s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i)*90ms + 150ms)}
 @keyframes rise{from{opacity:0;transform:translateY(46px)}}
 @media(prefers-reduced-motion:reduce){.hero h1 .w{animation:none}}
@@ -141,11 +140,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .form .btn{background:#fff;color:#101C3F!important;justify-self:start;border:0;cursor:pointer;font:inherit;font-weight:600}
 .form .btn:hover{background:var(--signal)}
  
-/* foto project */
 .side{display:flex;flex-direction:column;gap:18px;align-items:flex-start}
 .side img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:14px;border:1px solid var(--line);background:var(--card)}
  
-/* foto sertifikat */
 .cert{display:block;width:170px;margin-top:10px;padding:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--card);cursor:zoom-in;transition:border-color .2s,transform .2s}
 .cert:hover{border-color:var(--accent);transform:translateY(-2px)}
 .cert img{display:block;width:100%;height:auto}
@@ -238,9 +235,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <div class="toast" id="toast" role="status"></div>
 
 <script>
-/* =====================================================
-   EDIT BAGIAN INI SAJA: semua isi website ada di sini
-   ===================================================== */
 const PROFILE = {
   name: "Ariel Rizki Pratama",
   initials: "Arl",
@@ -249,13 +243,12 @@ const PROFILE = {
   intro: "Hello, I am a student who became a programmer.",
   email: "pratama.arielrizki@gmail.com",
   location: "Makassar, ID",
-  photo: "profile.jpg", // Ubah nama file foto profilmu jadi profile.jpg
+  photo: "foto orang ganteng.jpeg",
   aboutTitle: "Programmer And Software Engineer",
   about: "Hello everyone, let me introduce myself. I am Ariel Rizki Pratama, a senior high school student with a talent in coding.",
   facts: [
     ["Based in", "Makassar, Indonesia"],
-    // Ubah nama file sertifikatmu jadi sertif-1.jpg dan sertif-2.jpg
-    ["Certification", "", ["sertif-1.jpg", "sertif-2.jpg"]],
+    ["Certification", "", ["Sertif bit 2.jpg", "Sertif it 1.jpg"]],
   ],
   socials: [
     ["LinkedIn", "https://linkedin.com/in/username"],   
@@ -265,22 +258,22 @@ const PROFILE = {
  
 const PROJECTS = [
   { title: "Web Class 10 Modesty", kind: "Website",
-    image: "project-modesty.png", // Ubah nama file screenshot project 1
+    image: "Screenshot 2026-10-02 135556.png",
     desc: "Website kelas 10 Modesty yang saya buat, terdiri dari lobby, informasi kelas, data seluruh siswa, kegiatan di kelas, jadwal, dan galeri.",
     tags: ["VS Code", "Python", "HTML", "CSS", "JavaScript"],
     links: [["View code", "https://github.com/username/repo"], ["Live demo", "#"]] },
   { title: "Web Class 10 Honesty", kind: "Website",
-    image: "project-honesty.png", // Ubah nama file screenshot project 2
+    image: "Screenshot 2026-10-02 140700.png",
     desc: "Website kelas 10 Honesty, mirip dengan web kelas 10 Modesty: ada lobby, informasi kelas, data seluruh siswa, kegiatan di kelas, jadwal, dan galeri.",
     tags: ["VS Code", "Python", "HTML", "CSS", "JavaScript"],
     links: [["View code", "https://github.com/username/repo"]] },
   { title: "Timer Control", kind: "Web app",
-    image: "project-timer.png", // Ubah nama file screenshot project 3
+    image: "Screenshot 2026-10-02 141450.png",
     desc: "Project bertema waktu yang berisi alarm, timer, stopwatch, dan kompas.",
     tags: ["VS Code", "Python", "HTML", "CSS", "JavaScript"],
     links: [["Open app", "#"]] },
   { title: "To Do List Homework", kind: "Web app",
-    image: "project-todo.png", // Ubah nama file screenshot project 4
+    image: "Screenshot 2026-10-02 141737.png",
     desc: "Project untuk mencatat semua tugas atau kegiatan yang akan datang.",
     tags: ["VS Code", "Python", "HTML", "CSS", "JavaScript"],
     links: [["View code", "https://github.com/username/repo"]] },
@@ -288,19 +281,23 @@ const PROJECTS = [
  
 const STACK = ["Python", "HTML", "CSS", "JavaScript", "VS Code"];
  
-// urut dari yang terbaru (sesuai tulisan di bawah judul Journey)
 const JOURNEY = [
   ["SMA: Ciputa Kasih", "Mulai membuat program sendiri yang lebih rumit", "Membuat program dan website sendiri."],
   ["SMP: Bina Bersama & Angkasa", "Mulai memahami materi baru dan ikut lomba", "Mulai menggunakan Arduino Uno dan MIT App Inventor."],
   ["SD: Bina Bersama", "Mulai belajar coding", "Mulai belajar dari Scratch dan mBlock."],
 ];
- 
-/* =====================================================
-   Di bawah ini tidak perlu diubah
-   ===================================================== */
+
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
- 
+
+/* FUNGSI OTOMATIS AMAN BUAT FOTO */
+function buildImgHtml(src, alt) {
+  if (!src) return "";
+  const cleanSrc = esc(src);
+  const encSrc = esc(encodeURIComponent(src).replace(/%2F/g, '/'));
+  return `<img src="${cleanSrc}" alt="${esc(alt)}" onerror="if(!this.dataset.retry){this.dataset.retry=1;this.src='${encSrc}';}else{this.style.display='none';}">`;
+}
+
 document.title = `${PROFILE.name} | Portfolio`;
 $("logo").textContent = PROFILE.initials;
 $("status").textContent = PROFILE.status;
@@ -312,10 +309,16 @@ $("aboutTitle").textContent = PROFILE.aboutTitle;
 $("aboutText").textContent = PROFILE.about;
 $("place").textContent = PROFILE.location;
 $("copy").textContent = `©️ ${new Date().getFullYear()} ${PROFILE.name}`;
-$("facts").innerHTML = PROFILE.facts.map(([k, v, img]) => `<dt>${esc(k)}</dt><dd>${esc(v)}${[].concat(img || []).map(src => `<button type="button" class="cert" data-src="${esc(src)}" aria-label="View ${esc(v)}"><img src="${esc(src)}" alt="" onerror="this.parentElement.remove()"></button>`).join("")}</dd>`).join("");
+
+$("facts").innerHTML = PROFILE.facts.map(([k, v, img]) => `
+  <dt>${esc(k)}</dt>
+  <dd>${esc(v)}${[].concat(img || []).map(src => `<button type="button" class="cert" data-src="${esc(src)}" aria-label="View ${esc(v)}">${buildImgHtml(src, "")}</button>`).join("")}</dd>
+`).join("");
+
 $("socials").innerHTML = PROFILE.socials.map(([n, u]) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(n)}</a>`).join("");
-$("photo").innerHTML = PROFILE.photo ? `<img src="${esc(PROFILE.photo)}" alt="Portrait of ${esc(PROFILE.name)}">` : `<b>${esc(PROFILE.initials)}</b>`;
- 
+
+$("photo").innerHTML = `<b>${esc(PROFILE.initials)}</b>` + buildImgHtml(PROFILE.photo, `Portrait of ${PROFILE.name}`);
+
 $("projectList").innerHTML = PROJECTS.map((p, i) => `
   <li class="proj">
     <button class="row" aria-expanded="false" aria-controls="p${i}">
@@ -323,30 +326,27 @@ $("projectList").innerHTML = PROJECTS.map((p, i) => `
     </button>
     <div class="more" id="p${i}"><div><div class="in">
       <div><p>${esc(p.desc)}</p><div class="chips">${p.tags.map(t => `<span>${esc(t)}</span>`).join("")}</div></div>
-      <div class="side">${p.image ? `<img src="${esc(p.image)}" alt="Preview of ${esc(p.title)}" loading="lazy" onerror="this.remove()">` : ""}
+      <div class="side">${buildImgHtml(p.image, `Preview of ${p.title}`)}
         <div class="links">${p.links.map(([n, u]) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(n)}</a>`).join("")}</div>
       </div>
     </div></div></div>
   </li>`).join("");
- 
+
 $("projectList").addEventListener("click", e => {
   const b = e.target.closest(".row"); if (!b) return;
   const open = b.getAttribute("aria-expanded") === "true";
   document.querySelectorAll(".row").forEach(r => r.setAttribute("aria-expanded", "false"));
   b.setAttribute("aria-expanded", String(!open));
 });
- 
-// dua baris marquee, arah berlawanan
+
 const lane = (items, cls) => {
   let unit = items; while (unit.length < 36) unit = unit.concat(items);
   return `<div class="lane ${cls}">${[...unit, ...unit].map(s => `<span>${esc(s)}</span>`).join("")}</div>`;
 };
 $("lanes").innerHTML = lane(STACK, "") + lane([...STACK].reverse(), "rev");
- 
-// hero: titik-titik membentuk grafik garis yang bergerak, bereaksi pada kursor
+
 (() => {
   const c = $("field"), g = c.getContext("2d");
-  const css = getComputedStyle(document.documentElement);
   let ACC, DOT;
   const colors = () => { const s = getComputedStyle(document.documentElement); ACC = s.getPropertyValue("--accent").trim(); DOT = s.getPropertyValue("--line").trim(); };
   colors(); window.refreshField = () => { colors(); draw(); };
@@ -381,18 +381,15 @@ $("lanes").innerHTML = lane(STACK, "") + lane([...STACK].reverse(), "rev");
   size();
   if (!still) loop();
 })();
- 
-// theme (ikut pengaturan perangkat, ingat pilihan)
+
 const root = document.documentElement;
 let saved = null; try { saved = localStorage.getItem("theme"); } catch (e) {}
 const setTheme = m => { root.dataset.theme = m; $("theme").textContent = m === "dark" ? "☀" : "☾"; window.refreshField && refreshField(); };
 setTheme(saved || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
 $("theme").onclick = () => { const m = root.dataset.theme === "dark" ? "light" : "dark"; setTheme(m); try { localStorage.setItem("theme", m); } catch (e) {} };
- 
-// timeline
+
 $("timeline").innerHTML = JOURNEY.map(([y, t, d]) => `<li><time>${esc(y)}</time><h3>${esc(t)}</h3><p>${esc(d)}</p></li>`).join("");
- 
-// progress bar + menu aktif
+
 const bar = $("bar"), navLinks = [...document.querySelectorAll("nav a[href^='#']:not(.btn)")];
 const navSecs = navLinks.map(a => document.querySelector(a.getAttribute("href")));
 const onScroll = () => {
@@ -402,14 +399,12 @@ const onScroll = () => {
   navLinks.forEach((a, i) => a.classList.toggle("on", navSecs[i].offsetTop <= y && navSecs[i].offsetTop + navSecs[i].offsetHeight > y));
 };
 addEventListener("scroll", onScroll, { passive: true }); onScroll();
- 
-// copy email
+
 let tt; const toast = m => { const t = $("toast"); t.textContent = m; t.classList.add("show"); clearTimeout(tt); tt = setTimeout(() => t.classList.remove("show"), 1800); };
 const cb = document.createElement("button"); cb.type = "button"; cb.textContent = "Copy email";
 cb.onclick = async () => { try { await navigator.clipboard.writeText(PROFILE.email); toast("Email copied"); } catch (e) { toast(PROFILE.email); } };
 $("socials").append(cb);
- 
-// command menu: Ctrl/Cmd + K
+
 const ACTIONS = [
   ...["projects", "about", "journey", "contact"].map(id => ["Go to " + id, () => { location.hash = id; }]),
   ["Toggle dark mode", () => $("theme").click()],
@@ -426,31 +421,38 @@ const paint = () => {
   sel = Math.min(sel, Math.max(shown.length - 1, 0));
   pul.innerHTML = shown.map((a, i) => `<li class="${i === sel ? "on" : ""}" data-i="${i}">${esc(a[0])}</li>`).join("") || "<li>No match</li>";
 };
-const run = i => { const a = shown[i]; if (a) { pal.close(); a[1](); } };
+const runAction = i => { const a = shown[i]; if (a) { pal.close(); a[1](); } };
 pin.oninput = () => { sel = 0; paint(); };
 pin.onkeydown = e => {
   if (e.key === "ArrowDown") { sel = Math.min(sel + 1, shown.length - 1); paint(); e.preventDefault(); }
   else if (e.key === "ArrowUp") { sel = Math.max(sel - 1, 0); paint(); e.preventDefault(); }
-  else if (e.key === "Enter") run(sel);
+  else if (e.key === "Enter") runAction(sel);
 };
-pul.onclick = e => { const li = e.target.closest("li[data-i]"); if (li) run(+li.dataset.i); };
+pul.onclick = e => { const li = e.target.closest("li[data-i]"); if (li) runAction(+li.dataset.i); };
 pal.onclick = e => { if (e.target === pal) pal.close(); };
 const openPal = () => { pin.value = ""; sel = 0; paint(); pal.showModal(); pin.focus(); };
 addEventListener("keydown", e => { if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") { e.preventDefault(); pal.open ? pal.close() : openPal(); } });
 $("palBtn").textContent = /Mac/.test(navigator.platform) ? "⌘ K" : "Ctrl K";
 $("palBtn").onclick = openPal;
- 
-// form kontak: buka aplikasi email dengan pesan terisi
+
 $("form").addEventListener("submit", e => {
   e.preventDefault(); const f = new FormData(e.target);
   const body = `${f.get("t")}\n\nFrom: ${f.get("n")} (${f.get("m")})`;
   location.href = `mailto:${PROFILE.email}?subject=${encodeURIComponent("Portfolio message from " + f.get("n"))}&body=${encodeURIComponent(body)}`;
   toast("Opening your email app");
 });
- 
-// klik foto sertifikat untuk memperbesar
+
 const lb = document.createElement("dialog"); lb.id = "lb"; lb.innerHTML = `<img alt="Certificate">`; document.body.append(lb);
-$("facts").addEventListener("click", e => { const b = e.target.closest(".cert"); if (b) { lb.querySelector("img").src = b.dataset.src; lb.showModal(); } });
+$("facts").addEventListener("click", e => { 
+  const b = e.target.closest(".cert"); 
+  if (b) { 
+    const imgInside = b.querySelector("img");
+    if(imgInside && imgInside.src) {
+      lb.querySelector("img").src = imgInside.src; 
+      lb.showModal(); 
+    }
+  } 
+});
 lb.addEventListener("click", () => lb.close());
 </script>
 </body>
