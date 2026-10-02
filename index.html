@@ -35,7 +35,10 @@ html{scroll-behavior:smooth;scroll-padding-top:80px}
 body{background:var(--paper);color:var(--ink);font:400 1.05rem/1.6 var(--body);-webkit-font-smoothing:antialiased}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
-.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+
+/* PERBAIKAN: Menambahkan padding aman agar tidak terlalu mepet ke ujung layar */
+.wrap{width:min(1120px,100% - 48px);margin-inline:auto}
+
 h1,h2,h3{font-family:var(--display);line-height:1;letter-spacing:-.035em}
 h2{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:800}
  
@@ -52,7 +55,7 @@ nav a:hover{color:var(--ink)}
 .btn.ghost:hover{background:var(--ink);color:var(--paper)!important}
 @media(max-width:768px){nav a:not(.btn){display:none}}
  
-/* hero: the one memorable thing is the data-series dot field */
+/* hero */
 .hero{position:relative;min-height:calc(100svh - 68px);display:flex;align-items:center;overflow:hidden}
 #field{position:absolute;inset:0;width:100%;height:100%}
 .hero .wrap{position:relative;padding:60px 0;pointer-events:none}
@@ -68,7 +71,7 @@ section{padding:110px 0}
 .head{max-width:620px;margin-bottom:48px}
 .head p{color:var(--mute);margin-top:16px}
  
-/* projects: an accordion list, not a grid of identical cards */
+/* projects */
 .projects{list-style:none;padding:0;border-top:1.5px solid var(--ink)}
 .proj{border-bottom:1.5px solid var(--ink)}
 .row{width:100%;display:grid;grid-template-columns:1fr auto 44px;gap:20px;align-items:center;padding:30px 0;background:none;border:0;color:inherit;font:inherit;text-align:left;cursor:pointer}
@@ -121,7 +124,7 @@ section{padding:110px 0}
 footer{background:var(--deep);color:#ffffff99;padding:34px 0;font-size:.95rem;border-top:1px solid #ffffff22}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
  
-/* v3: intro, hover preview, command menu, form */
+/* v3 components */
 .hero h1 .w{display:inline-block;animation:rise .9s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i)*90ms + 150ms)}
 @keyframes rise{from{opacity:0;transform:translateY(46px)}}
 @media(prefers-reduced-motion:reduce){.hero h1 .w{animation:none}}
@@ -432,7 +435,9 @@ $("palBtn").onclick = openPal;
 
 $("form").addEventListener("submit", e => {
   e.preventDefault(); const f = new FormData(e.target);
-  const body = `${f.get("t")}\n\nFrom: ${f.get("n")} (${f.get("m")})`;
+  const body = `${f.get("t")}
+
+From: ${f.get("n")} (${f.get("m")})`;
   location.href = `mailto:${PROFILE.email}?subject=${encodeURIComponent("Portfolio message from " + f.get("n"))}&body=${encodeURIComponent(body)}`;
   toast("Opening your email app");
 });
