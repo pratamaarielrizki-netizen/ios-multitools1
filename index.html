@@ -13,155 +13,206 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: #0f172a;
-            color: #f8fafc;
+            background-color: #ffffff;
+            color: #0f172a;
             line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Background Dot Matrix Pattern */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(#cbd5e1 1.5px, transparent 1.5px);
+            background-size: 32px 32px;
+            opacity: 0.4;
+            z-index: -1;
         }
 
         .site-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 3rem 2rem;
+            padding: 1.5rem 2rem;
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0;
+            margin-bottom: 3rem;
+        }
+
+        .nav-logo {
+            font-weight: 800;
+            font-size: 1.25rem;
+            color: #0f172a;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #475569;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #0f172a;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .ctrl-k {
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            color: #64748b;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .theme-toggle {
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #475569;
+            font-size: 1rem;
+        }
+
+        .btn-lets-talk {
+            background-color: #0f172a;
+            color: #ffffff;
+            border: none;
+            padding: 0.6rem 1.25rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background 0.2s;
+            text-decoration: none;
+        }
+
+        .btn-lets-talk:hover {
+            background-color: #1e293b;
         }
 
         /* Hero Section */
         .hero-section {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            gap: 3rem;
-            padding: 2rem 0 4rem 0;
-            min-height: 75vh;
-        }
-
-        .hero-content {
-            flex: 1;
+            padding: 4rem 0 6rem 0;
+            max-width: 850px;
         }
 
         .badge {
-            display: inline-block;
-            padding: 0.4rem 1rem;
-            background-color: rgba(249, 115, 22, 0.15);
-            color: #f97316;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.35rem 0.85rem;
+            background-color: rgba(245, 158, 11, 0.1);
+            color: #d97706;
             border-radius: 9999px;
             font-size: 0.875rem;
             font-weight: 600;
-            margin-bottom: 1.25rem;
-        }
-
-        .hero-content h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            color: #ffffff;
-            letter-spacing: -0.025em;
-            line-height: 1.2;
-        }
-
-        .hero-content p {
-            font-size: 1.125rem;
-            color: #94a3b8;
             margin-bottom: 1.5rem;
         }
 
-        .hero-meta {
-            font-size: 1rem;
-            color: #cbd5e1;
-            border-top: 1px solid #334155;
-            padding-top: 1.25rem;
+        .badge-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #f59e0b;
+            border-radius: 50%;
         }
 
-        /* Kotak Foto Profil */
-        .hero-image-wrapper {
-            width: 320px;
-            height: 320px;
-            border-radius: 1.5rem;
-            overflow: hidden;
-            background-color: #1e293b;
-            border: 1px solid #334155;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
-            position: relative;
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .hero-section h1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            color: #0f172a;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
         }
 
-        .hero-image-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .fallback-initials {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            font-weight: bold;
-            color: #f97316;
-        }
-
-        /* Bagian Proyek */
-        .projects-section {
-            margin-top: 2rem;
-            border-top: 1px solid #334155;
-            padding-top: 3rem;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .project-card {
-            background-color: #1e293b;
-            border: 1px solid #334155;
-            border-radius: 1rem;
-            padding: 1.75rem;
-            transition: transform 0.2s, border-color 0.2s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-4px);
-            border-color: #f97316;
-        }
-
-        .project-card h3 {
-            color: #ffffff;
-            margin-bottom: 0.5rem;
+        .hero-section p {
             font-size: 1.25rem;
+            color: #475569;
+            margin-bottom: 2.5rem;
         }
 
-        .project-card p {
-            color: #94a3b8;
-            font-size: 0.95rem;
-            margin-bottom: 0;
+        .hero-buttons {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .btn-primary {
+            background-color: #0f172a;
+            color: #ffffff;
+            padding: 0.8rem 1.75rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e293b;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #0f172a;
+            border: 1px solid #cbd5e1;
+            padding: 0.8rem 1.75rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.2s, border-color 0.2s;
+        }
+
+        .btn-secondary:hover {
+            background-color: #f8fafc;
+            border-color: #94a3b8;
         }
 
         /* Responsif HP */
         @media (max-width: 768px) {
-            .site-container {
-                padding: 1.5rem 1rem;
+            .nav-links, .ctrl-k {
+                display: none;
             }
-            .hero-section {
-                flex-direction: column-reverse;
-                text-align: center;
-                gap: 2rem;
-                padding: 1rem 0 2rem 0;
+            .hero-section h1 {
+                font-size: 3rem;
             }
-            .hero-content h1 {
-                font-size: 2.25rem;
-            }
-            .hero-image-wrapper {
-                width: 240px;
-                height: 240px;
-                margin: 0 auto;
+            .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
             }
         }
     </style>
@@ -170,62 +221,37 @@
 
     <div class="site-container">
         
+        <!-- NAVBAR -->
+        <nav>
+            <a href="#" class="nav-logo" id="logoText">Arl</a>
+            <ul class="nav-links">
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#journey">Journey</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <div class="ctrl-k">Ctrl K</div>
+                <div class="theme-toggle">🌙</div>
+                <a href="#contact" class="btn-lets-talk">Let's talk</a>
+            </div>
+        </nav>
+
         <!-- HERO SECTION -->
         <header class="hero-section">
-            <div class="hero-content">
-                <span id="statusBadge" class="badge">Student</span>
-                <h1 id="mainTitle">Programmer And Software Engineer</h1>
-                <p id="mainIntro">Hello everyone, let me introduce myself. I am Ariel Rizki Pratama, a senior high school student with a talent in coding.</p>
-                <div class="hero-meta">
-                    <span>Based in: <strong id="locationText">Makassar, Indonesia</strong></span>
-                </div>
+            <div class="badge">
+                <div class="badge-dot"></div>
+                <span id="statusText">Student</span>
             </div>
-            
-            <!-- FOTO PROFIL -->
-            <div class="hero-image-wrapper">
-                <img id="profilePhoto" src="avatar.jpeg" alt="Ariel Rizki Pratama" onerror="this.style.display='none'; document.getElementById('fallbackInitials').style.display='flex';">
-                <div id="fallbackInitials" class="fallback-initials" style="display:none;">Arl</div>
+            <h1 id="mainTitle">Welcome to My Portfolio.</h1>
+            <p id="mainIntro">Hello, I am a student who became a programmer.</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn-primary">See my projects</a>
+                <a href="#contact" class="btn-secondary">Send an email</a>
             </div>
         </header>
 
-        <!-- SEKSI PROJECT -->
-        <section class="projects-section">
-            <h2 style="color: #fff; font-size: 1.8rem; margin-bottom: 0.5rem;">My Projects</h2>
-            <div id="projectsContainer" class="projects-grid"></div>
-        </section>
-
     </div>
 
-    <script>
-        const PROJECTS = [
-            { 
-                title: "Web Class 10 Modesty", kind: "Website",
-                desc: "Website kelas 10 Modesty yang saya buat, terdiri dari lobby, informasi kelas, data siswa, dan galeri."
-            },
-            { 
-                title: "Web Class 10 Honesty", kind: "Website",
-                desc: "Website kelas 10 Honesty, mirip dengan web kelas 10 Modesty: informasi kelas dan data siswa."
-            },
-            { 
-                title: "Timer Control", kind: "Web app",
-                desc: "Project bertema waktu yang berisi alarm, timer, stopwatch, dan kompas."
-            },
-            { 
-                title: "To Do List Homework", kind: "Web app",
-                desc: "Project untuk mencatat semua tugas atau kegiatan yang akan datang."
-            }
-        ];
-
-        window.addEventListener("DOMContentLoaded", () => {
-            const container = document.getElementById("projectsContainer");
-            container.innerHTML = PROJECTS.map(p => `
-                <div class="project-card">
-                    <span style="color: #f97316; font-size: 0.8rem; font-weight: bold; text-transform: uppercase;">${p.kind}</span>
-                    <h3 style="margin-top: 0.25rem;">${p.title}</h3>
-                    <p>${p.desc}</p>
-                </div>
-            `).join("");
-        });
-    </script>
 </body>
 </html>
