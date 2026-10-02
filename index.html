@@ -1,100 +1,195 @@
 <!doctype html>
-<html lang="en">
+<html lang="id">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nama Kamu | Data & AI Engineer</title>
-<meta name="description" content="Portfolio of Nama Kamu, data and AI engineer based in Makassar.">
+<title>Ariel | Data & AI Engineer</title>
+<meta name="description" content="Portfolio of Ariel, data and AI engineer based in Makassar.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%8A%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<style>
+:root {
+  --bg: #09090b;
+  --fg: #f4f4f5;
+  --muted: #a1a1aa;
+  --card: #18181b;
+  --border: #27272a;
+  --accent: #f97316;
+}
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: 'Instrument Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
+header {
+  position: sticky;
+  top: 0;
+  background: rgba(9, 9, 11, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  z-index: 100;
+  padding: 1rem 0;
+}
+.wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav a, nav button {
+  color: var(--muted);
+  text-decoration: none;
+  margin-left: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+nav a:hover, nav button:hover {
+  color: var(--fg);
+}
+.btn {
+  background: var(--fg);
+  color: var(--bg);
+  padding: 0.6rem 1.2rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.btn:hover { opacity: 0.9; }
+.btn.ghost {
+  background: transparent;
+  color: var(--fg);
+  border: 1px solid var(--border);
+}
+section {
+  padding: 5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.hero {
+  padding: 8rem 0 5rem 0;
+  text-align: left;
+}
+.hero h1 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin: 0.5rem 0 1rem 0;
+  letter-spacing: -0.02em;
+}
+.hero p {
+  color: var(--muted);
+  font-size: 1.15rem;
+  max-width: 600px;
+  margin-bottom: 2rem;
+}
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 0.3rem 0.8rem;
+  border-radius: 99px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.tag i {
+  width: 8px;
+  height: 8px;
+  background: #22c55e;
+  border-radius: 50%;
+}
+.form input, .form textarea {
+  width: 100%;
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  color: var(--fg);
+  margin-bottom: 1rem;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+.form { max-width: 500px; margin-top: 2rem; }
+footer { padding: 2rem 0; text-align: center; color: var(--muted); font-size: 0.9rem; }
+</style>
 </head>
 <body>
-<div id="bar"></div>
- 
+
 <header>
   <div class="wrap">
-    <a class="logo" href="#top" id="logo"></a>
+    <a class="btn ghost" href="#top" style="padding:0.4rem 0.8rem; font-weight:800;">Ariel.</a>
     <nav>
-      <a href="#projects">Projects</a><a href="#about">About</a><a href="#journey">Journey</a><a href="#contact">Contact</a>
-      <button class="kbd" id="palBtn" aria-label="Open command menu"></button>
-      <button class="theme" id="theme" aria-label="Toggle dark mode"></button>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#journey">Journey</a>
       <a class="btn" href="#contact">Let's talk</a>
     </nav>
   </div>
 </header>
- 
+
 <main id="top">
   <div class="hero">
-    <canvas id="field" aria-hidden="true"></canvas>
-    <div class="wrap">
-      <span class="tag"><i></i><span id="status"></span></span>
-      <h1 id="headline"></h1>
-      <p id="intro"></p>
-      <div class="cta">
+    <div class="wrap" style="flex-direction: column; align-items: flex-start;">
+      <span class="tag"><i></i><span>Available for new projects</span></span>
+      <h1>Data & AI Engineer based in Makassar.</h1>
+      <p>Membangun sistem cerdas, arsitektur data handal, dan solusi AI mutakhir untuk menyelesaikan masalah nyata.</p>
+      <div class="cta" style="display:flex; gap:1rem;">
         <a class="btn" href="#projects">See my projects</a>
-        <a class="btn ghost" id="mailBtn" href="#">Send an email</a>
+        <a class="btn ghost" href="#contact">Send an email</a>
       </div>
     </div>
   </div>
- 
+
   <section id="projects">
-    <div class="wrap">
-      <div class="head">
-        <h2>My Projects</h2>
-        <p>These are some of my projects.</p>
-      </div>
-      <ul class="projects" id="projectList"></ul>
+    <div class="wrap" style="flex-direction: column; align-items: flex-start;">
+      <h2>My Projects</h2>
+      <p style="color:var(--muted);">Beberapa portofolio dan proyek yang pernah saya kerjakan.</p>
     </div>
   </section>
- 
-  <section class="stack" id="stack">
-    <div class="wrap"><div class="head" style="margin-bottom:10px"><h2>Tools I work with</h2></div></div>
-    <div id="lanes" style="padding-bottom:10px"></div>
-  </section>
- 
+
   <section id="about">
-    <div class="wrap about">
-      <div>
-        <h2 id="aboutTitle"></h2>
-        <p id="aboutText"></p>
-        <dl class="facts" id="facts"></dl>
-      </div>
-      <div class="photo" id="photo"></div>
+    <div class="wrap" style="flex-direction: column; align-items: flex-start;">
+      <h2>About Me</h2>
+      <p style="color:var(--muted); max-width: 700px;">Halo! Saya seorang Data & AI Engineer yang berfokus pada machine learning, pengolahan data berskala besar, dan integrasi kecerdasan buatan ke dalam aplikasi web modern.</p>
     </div>
   </section>
- 
+
   <section id="journey">
-    <div class="wrap">
-      <div class="head"><h2>Journey</h2><p>Pendidikan</p></div>
-      <ol class="tl" id="timeline"></ol>
+    <div class="wrap" style="flex-direction: column; align-items: flex-start;">
+      <h2>Journey</h2>
+      <p style="color:var(--muted);">Pendidikan dan latar belakang profesional.</p>
     </div>
   </section>
- 
+
   <section class="contact" id="contact">
-    <div class="wrap">
+    <div class="wrap" style="flex-direction: column; align-items: flex-start; width: 100%;">
       <h2>Have data that needs a plan?</h2>
-      <a class="mail" id="mail" href="#"></a>
-      <div class="socials" id="socials"></div>
-      <form class="form" id="form">
-        <input name="n" placeholder="Your name" aria-label="Your name" required>
-        <input name="m" type="email" placeholder="Your email" aria-label="Your email" required>
-        <textarea name="t" rows="4" placeholder="What are you working on?" aria-label="Message" required></textarea>
+      <p style="color:var(--muted);">Mari diskusikan proyek atau kolaborasi menarik bersama Anda.</p>
+      <form class="form" onsubmit="event.preventDefault(); alert('Pesan terkirim! Terima kasih.');">
+        <input name="n" placeholder="Your name" required>
+        <input name="m" type="email" placeholder="Your email" required>
+        <textarea name="t" rows="4" placeholder="What are you working on?" required></textarea>
         <button class="btn" type="submit">Send message</button>
       </form>
     </div>
   </section>
 </main>
- 
+
 <footer>
-  <div class="wrap"><span id="copy"></span><span id="place"></span></div>
+  <div class="wrap" style="justify-content: center;">
+    <span>© 2026 Ariel. All rights reserved.</span>
+  </div>
 </footer>
- 
-<div class="toast" id="toast" role="status"></div>
-<script src="script.js"></script>
+
 </body>
 </html>
- 
-
